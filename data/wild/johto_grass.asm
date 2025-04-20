@@ -1266,7 +1266,7 @@ JohtoGrassWildMons:
 	db 10 percent, 10 percent, 10 percent ; encounter rates: morn/day/nite
 	; morn
 	dbw 3, LEDYBA
-	dbw 3, CATERPIE
+	dbw 3, MISSINGNO
 	dbw 4, CATERPIE
 	dbw 4, PIDGEY
 	dbw 3, WEEDLE
@@ -1274,7 +1274,7 @@ JohtoGrassWildMons:
 	dbw 4, HOPPIP
 	; day
 	dbw 3, PIDGEY
-	dbw 3, CATERPIE
+	dbw 3, MISSINGNO
 	dbw 4, CATERPIE
 	dbw 4, PIDGEY
 	dbw 3, WEEDLE
@@ -1282,7 +1282,7 @@ JohtoGrassWildMons:
 	dbw 4, HOPPIP
 	; nite
 	dbw 3, SPINARAK
-	dbw 3, HOOTHOOT
+	dbw 3, MISSINGNO
 	dbw 4, POLIWAG
 	dbw 4, HOOTHOOT
 	dbw 3, ZUBAT

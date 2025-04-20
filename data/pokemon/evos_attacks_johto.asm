@@ -101,6 +101,7 @@ EvosAttacksPointers2::
 	dw LugiaEvosAttacks
 	dw HoOhEvosAttacks
 	dw CelebiEvosAttacks
+	dw MissingNoEvosAttacks
 .IndirectEnd::
 
 ChikoritaEvosAttacks:
@@ -1402,4 +1403,10 @@ CelebiEvosAttacks:
 	dbw 30, FUTURE_SIGHT
 	dbw 40, BATON_PASS
 	dbw 50, PERISH_SONG
+	db 0 ; no more level-up moves
+
+MissingNoEvosAttacks:
+	db 0 ; no more evolutions
+	dbw 1, SKY_ATTACK
+	dbw 1, WATER_GUN
 	db 0 ; no more level-up moves
