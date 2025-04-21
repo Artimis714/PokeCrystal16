@@ -711,5 +711,5 @@ UnownRBackpic:       INCBIN "gfx/pokemon/unown_r/back.2bpp.lz"
 
 SECTION "Pics 19", ROMX
 
-MissingNoFrontpic:   INCBIN "gfx/pokemon/missingno/front.2bpp.lz"
+MissingNoFrontpic:   INCBIN "gfx/pokemon/missingno/front.animated.2bpp.lz"
 MissingNoBackpic:    INCBIN "gfx/pokemon/missingno/back.2bpp.lz"
