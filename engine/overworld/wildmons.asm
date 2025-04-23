@@ -112,14 +112,23 @@ FindNest:
 	inc hl
 .ScanMapLoop:
 	push af
-	ld a, [hli]
-	cp c
-	ld a, [hli]
-	jr nz, .next_mon
-	cp b
-	jr z, .found
-.next_mon
+
+	ld a, [hli]           ; a = Probability (skip or store if needed)
+
+	ld d, [hl]            ; Load lower byte of Species
 	inc hl
+	ld e, [hl]            ; Load upper byte of Species
+	inc hl
+	ld a, d
+	cp c                 ; Compare to lower byte of target species
+	jr nz, .next_mon
+	ld a, e
+	cp b                 ; Compare to upper byte
+	jr z, .found         ; Match found!
+
+.next_mon
+	inc hl               ; Skip Min Level
+	inc hl               ; Skip Max Level
 	pop af
 	dec a
 	jr nz, .ScanMapLoop
@@ -275,90 +284,86 @@ ChooseWildEncounter:
 	inc hl
 	inc hl
 	call CheckOnWater
-	ld de, WaterMonProbTable
 	jr z, .watermon
 	inc hl
 	inc hl
 	ld a, [wTimeOfDay]
-	ld bc, NUM_GRASSMON * 3
+	ld bc, NUM_GRASSMON * 5
 	call AddNTimes
-	ld de, GrassMonProbTable
 
 .watermon
-; hl contains the pointer to the wild mon data, let's save that to the stack
-	push hl
 .randomloop
 	call Random
 	cp 100
-	jr nc, .randomloop
-	inc a ; 1 <= a <= 100
-	ld b, a
-	ld h, d
-	ld l, e
+	ld de, 5
 ; This next loop chooses which mon to load up.
 .prob_bracket_loop
-	ld a, [hli]
-	cp b
-	jr nc, .got_it
-	inc hl
-	jr .prob_bracket_loop
+	sub [hl]
+	jr c, .got_it
+	add hl, de
+	; Add safety here to avoid infinite loop
+	dec bc
+	ld a, b
+	or c
+	jr nz, .prob_bracket_loop
+	jr .nowildbattle
 
 .got_it
-	ld c, [hl]
-	ld b, 0
-	pop hl
-	add hl, bc ; this selects our mon
+	inc hl
 	ld a, [hli]
 	ld b, a
-; If the Pokemon is encountered by surfing, we need to give the levels some variety.
-	call CheckOnWater
-	jr nz, .ok
-; Check if we buff the wild mon, and by how much.
-	call Random
-	cp 35 percent
-	jr c, .ok
-	inc b
-	cp 65 percent
-	jr c, .ok
-	inc b
-	cp 85 percent
-	jr c, .ok
-	inc b
-	cp 95 percent
-	jr c, .ok
-	inc b
-; Store the level
-.ok
-	ld a, b
-	ld [wCurPartyLevel], a
 
-	ld a, [hli]
-	ld h, [hl]
-	ld l, a
 	call ValidateTempWildMonSpecies
 	jr c, .nowildbattle
 
-	ld a, l
-	sub LOW(UNOWN)
-	jr nz, .done
-	if HIGH(UNOWN) > 1
-		ld a, h
-		cp HIGH(UNOWN)
-	elif HIGH(UNOWN) == 1
-		ld a, h
-		dec a
-	else
-		or h
-	endc
-	jr nz, .done
+	; HL is at [Species] (after skipping probability byte)
+	ld a, [hli]          ; species low byte
+	ld c, a
+	ld a, [hli]          ; species high byte
+	ld b, a
 
+	; Check for UNOWN (compare to 16-bit constant)
+	ld a, c
+	cp LOW(UNOWN)
+	jr nz, .load_species
+	ld a, b
+	cp HIGH(UNOWN)
+	jr nz, .load_species
+
+	; It's UNOWN: check if any are unlocked
 	ld a, [wUnlockedUnowns]
 	and a
 	jr z, .nowildbattle
 
-.done
-	call GetPokemonIDFromIndex
-	ld [wTempWildMonSpecies], a
+.load_species
+	ld a, c
+	ld [wTempWildMonSpecies], a    ; store low byte
+	ld a, b
+	ld [wTempWildMonSpecies+1], a  ; store high byte
+
+	; Get Min Level
+	ld a, [hli]
+	ld d, a
+
+	; Get Max Level
+	ld a, [hl]
+	sub d
+	jr nz, .RandomLevel
+
+	; If min == max
+	ld a, d
+	jr .GotLevel
+
+.RandomLevel:
+	ld c, a
+	inc c                ; range = max - min + 1
+	call Random
+	ldh a, [hRandomAdd]
+	call SimpleDivide    ; a = random number in range
+	add d                ; a = min + rand offset
+
+.GotLevel:
+	ld [wCurPartyLevel], a
 
 .startwildbattle
 	xor a
@@ -368,6 +373,7 @@ ChooseWildEncounter:
 	ld a, 1
 	and a
 	ret
+
 
 INCLUDE "data/wild/probabilities.asm"
 
@@ -827,41 +833,51 @@ RandomUnseenWildMon:
 	call GetCallerRouteWildGrassMons
 	jr nc, .done
 	push hl
+
 .randloop1
 	call Random
 	and %11
 	jr z, .randloop1
-	ld bc, 10 ; skip three mons plus the level of the fourth
+	ld bc, 5 * 4 ; Skip four Pokémon entries (common ones)
 	add hl, bc
+
+	; Select one of the last 3 rare Pokémon
 	ld c, a
-	add hl, bc
-	add hl, bc
-	add hl, bc
-	; We now have the pointer to one of the last (rarest) three wild Pokemon found in that area.
-	; Load the species index of this rare Pokemon
+	ld b, 0
+	ld de, 5
+	call AddNTimes
+
+	; We now point to one of the last (rarest) three wild Pokémon found in that area.
+	; Load the species ID (2 bytes)
+	inc hl ; skip Min level
+	inc hl ; skip Max level
 	ld a, [hli]
 	ld d, [hl]
 	ld e, a
 	pop hl
-	inc hl ; Species index of the most common Pokemon on that route
+
+	; Compare with first 4 (common) entries
 	ld b, 4
 .loop2
+	inc hl ; skip Min level
+	inc hl ; skip Max level
 	ld a, [hli]
-	cp e ; Compare this common Pokemon with the rare one stored in de.
+	cp e
 	ld a, [hli]
 	jr nz, .next
 	cp d
 	jr z, .done
 .next
-	inc hl
+	inc hl ; skip probability
 	dec b
 	jr nz, .loop2
-; This Pokemon truly is rare.
+
+	; Truly rare
 	push de
 	call CheckSeenMonIndex
 	pop bc
 	jr nz, .done
-; Since we haven't seen it, have the caller tell us about it.
+
 	ld de, wStringBuffer1
 	call CopyName1
 	ld h, b
@@ -890,13 +906,15 @@ RandomPhoneWildMon:
 	and %11
 	ld c, a
 	ld b, 0
-	add hl, bc
-	add hl, bc
-	add hl, bc
-	inc hl
+	ld de, 5
+	call AddNTimes
+
+	inc hl ; skip Min level
+	inc hl ; skip Max level
 	ld a, [hli]
 	ld h, [hl]
 	ld l, a
+
 	call GetPokemonIDFromIndex
 	ld [wNamedObjectIndex], a
 	call GetPokemonName

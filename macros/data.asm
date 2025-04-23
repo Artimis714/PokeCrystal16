@@ -41,9 +41,19 @@ MACRO dbw
 	dw \2
 ENDM
 
+MACRO dbwp
+	db \1         ; Encounter rate
+	dw \2         ; Species ID (16-bit)
+	db \3, \4     ; Min level, Max level
+ENDM
+
 MACRO dbbbw
 	db \1, \2, \3
 	dw \4
+ENDM
+
+MACRO wildmon_percent
+	db (\1 * $ff / 100)
 ENDM
 
 MACRO dbwbb
