@@ -16,9 +16,7 @@ GrassMonProbTable:
 
 WaterMonProbTable:
 	table_width 2, WaterMonProbTable
-	mon_prob 40,   0 ; 40% chance
-	mon_prob 70,   1 ; 30% chance
-	mon_prob 90,   2 ; 20% chance
-	mon_prob 96,   3 ;  6% chance
-	mon_prob 100,  4 ;  4% chance
+	mon_prob 60,  0 ; 60% chance
+	mon_prob 90,  1 ; 30% chance
+	mon_prob 100, 2 ; 10% chance
 	assert_table_length NUM_WATERMON

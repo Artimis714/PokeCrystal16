@@ -46,10 +46,6 @@ MACRO dbbbw
 	dw \4
 ENDM
 
-MACRO wildmon_percent
-	db (\1 * $ff / 100)
-ENDM
-
 MACRO dbwbb
 	db \1
 	dw \2

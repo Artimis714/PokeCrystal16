@@ -220,7 +220,7 @@ OaksPKMNTalk4:
 	; Point hl to the list of Pokémon for that time of day, skipping the map ID and the percentages
 	ld bc, 5
 	add hl, bc
-	ld c, 5 * NUM_GRASSMON
+	ld c, 3 * NUM_GRASSMON
 	call AddNTimes
 
 .loop3
