@@ -4956,7 +4956,7 @@ PokefanMGroup:
 
 KimonoGirlGroup:
 	next_list_item ; KIMONO_GIRL (1)
-	db "NAOKO@", TRAINERTYPE_NORMAL
+	db "KIKYO@", TRAINERTYPE_NORMAL
 	db 20
 	dw SKIPLOOM
 	db 20

@@ -24,6 +24,7 @@ Landmarks:
 	landmark  52, 120, IlexForestName
 	landmark  52, 112, Route34Name
 	landmark  52,  92, GoldenrodCityName
+	landmark  51,  92, LostArchivesName
 	landmark  50,  92, RadioTowerName
 	landmark  52,  76, Route35Name
 	landmark  52,  60, NationalParkName
@@ -123,6 +124,7 @@ RuinsOfAlphName:     db "RUINS<BSP>OF ALPH@"
 UnionCaveName:       db "UNION CAVE@"
 SlowpokeWellName:    db "SLOWPOKE<BSP>WELL@"
 RadioTowerName:      db "RADIO TOWER@"
+LostArchivesName:    db "LOST ARCHIVES"
 PowerPlantName:      db "POWER PLANT@"
 NationalParkName:    db "NATIONAL<BSP>PARK@"
 TinTowerName:        db "TIN TOWER@"

@@ -109,4 +109,12 @@ OverworldSprites:
 	overworld_sprite EnteiSpriteGFX, 4, STILL_SPRITE, PAL_OW_RED
 	overworld_sprite RaikouSpriteGFX, 4, STILL_SPRITE, PAL_OW_RED
 	overworld_sprite StandingYoungsterSpriteGFX, 12, STANDING_SPRITE, PAL_OW_BLUE
+	overworld_sprite GhostKimonoSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
+	overworld_sprite GhostGrannySpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
+	overworld_sprite GhostRocketSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BROWN
+	overworld_sprite GhostNerdSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
+	overworld_sprite GhostCooltrainerMSpriteGFX, 12, WALKING_SPRITE, PAL_OW_RED
+	overworld_sprite GhostGentlemanSpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
+	overworld_sprite GhostBeautySpriteGFX, 12, WALKING_SPRITE, PAL_OW_BLUE
+	overworld_sprite GhostFloatingSpriteGFX, 12, STANDING_SPRITE, PAL_OW_BROWN
 	assert_table_length NUM_OVERWORLD_SPRITES

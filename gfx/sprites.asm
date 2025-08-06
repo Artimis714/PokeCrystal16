@@ -106,3 +106,16 @@ SuicuneSpriteGFX::             INCBIN "gfx/sprites/suicune.2bpp"
 EnteiSpriteGFX::               INCBIN "gfx/sprites/entei.2bpp"
 RaikouSpriteGFX::              INCBIN "gfx/sprites/raikou.2bpp"
 StandingYoungsterSpriteGFX::   INCBIN "gfx/sprites/standing_youngster.2bpp"
+
+
+SECTION "Sprites 3", ROMX
+
+GhostKimonoSpriteGFX::		INCBIN "gfx/sprites/ghost_kimono_girl.2bpp"
+GhostGrannySpriteGFX::		INCBIN "gfx/sprites/ghost_granny.2bpp"
+GhostRocketSpriteGFX::		INCBIN "gfx/sprites/ghost_rocket.2bpp"
+GhostNerdSpriteGFX::		INCBIN "gfx/sprites/ghost_super_nerd.2bpp"
+GhostCooltrainerMSpriteGFX::	INCBIN "gfx/sprites/ghost_cooltrainer_m.2bpp"
+GhostGentlemanSpriteGFX::	INCBIN "gfx/sprites/ghost_gentleman.2bpp"
+GhostBeautySpriteGFX::		INCBIN "gfx/sprites/ghost_beauty.2bpp"
+GhostFloatingSpriteGFX::	INCBIN "gfx/sprites/ghost.2bpp"
+
