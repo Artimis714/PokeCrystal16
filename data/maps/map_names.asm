@@ -180,6 +180,8 @@ Dungeons_Map_Names: ;newgroup DUNGEONS
 	dw Dungeons_Map_Name90 ; map_const SAFARI_ZONE_BETA,                            10, 18 ; 90
 	dw Dungeons_Map_Name91 ; map_const VICTORY_ROAD,; 91
 	dw Dungeons_Map_Name92 ; map_const GOLDENROD_ARCHIVES, 				10,  9 : 92
+	dw Dungeons_Map_Name93 ; map_const GOLDENROD_ARCHIVES_1BF,			10, 10 ; 93
+	dw Dungeons_Map_Name94 ; map_const GOLDENROD_ARCHIVES_2BF, 			50,  6 ; 94
 	assert_table_length NUM_DUNGEONS_MAPS
 	
 
@@ -783,6 +785,10 @@ Dungeons_Map_Name91: ; map_const VICTORY_ROAD,;  4
 	db "VICTORY ROAD@"
 Dungeons_Map_Name92: ; map_const GOLDENROD_ARCHIVES,; 92
 	db "LOST ARCHIVES"
+Dungeons_Map_Name93: ; map_const GOLDENROD_ARCHIVES_1BF,; 93
+	db "LOST ARCHIVES"
+Dungeons_Map_Name94: ; map_const GOLDENROD_ARCHIVES_2BF,; 94
+	db "SACRED RIVER"
 
 Ecruteak_Map_Name1: ; map_const ECRUTEAK_TIN_TOWER_ENTRANCE,;  1
 	db "TIN TOWER PATH@"

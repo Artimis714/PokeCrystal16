@@ -119,7 +119,6 @@ ROMX $24
 	"bank24"
 ROMX $25
 	"Maps"
-	"Events"
 ROMX $26
 	"Map Scripts 11"
 ROMX $27
@@ -311,6 +310,7 @@ ROMX $78
 	"Tileset Data 8"
 ROMX $7b
 	"Battle Tower Text"
+	"Events"
 ROMX $7c
 	"Battle Tower Trainer Data"
 ROMX $7d
@@ -320,6 +320,7 @@ ROMX $7e
 ROMX $7f
 	org $7de0
 	"Stadium 2 Checksums"
+ROMX $80
 WRAM0
 	"Stack"
 	"Audio RAM"

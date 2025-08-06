@@ -485,5 +485,7 @@ SECTION "Map Scripts 25", ROMX
 INCLUDE "maps/SilverCaveOutside.asm"
 INCLUDE "maps/Route10North.asm"
 INCLUDE "maps/GoldenrodArchives.asm"
+INCLUDE "maps/GoldenrodArchives1BF.asm"
+INCLUDE "maps/GoldenrodArchives2BF.asm"
 
 ENDSECTION

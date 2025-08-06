@@ -1049,4 +1049,10 @@ GoldenrodDeptStoreRoof_Blocks:
 GoldenrodArchives_Blocks:
 	INCBIN "maps/GoldenrodArchives.blk"
 
+GoldenrodArchives1BF_Blocks:
+	INCBIN "maps/GoldenrodArchives1BF.blk"
+
+GoldenrodArchives2BF_Blocks:
+	INCBIN "maps/GoldenrodArchives2BF.blk"
+
 ENDSECTION

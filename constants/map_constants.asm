@@ -155,6 +155,8 @@ ENDM
 	map_const SAFARI_ZONE_BETA,                            10, 18 ; 90
 	map_const VICTORY_ROAD,                                10, 36 ; 91
 	map_const GOLDENROD_ARCHIVES,			       10,  9 ; 92
+	map_const GOLDENROD_ARCHIVES_1BF,		       10, 10 ; 92
+	map_const GOLDENROD_ARCHIVES_2BF,		       50,  6 ; 92
 	endgroup
 
 	newgroup ECRUTEAK                                             ;  4
