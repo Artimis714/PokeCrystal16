@@ -487,5 +487,6 @@ INCLUDE "maps/Route10North.asm"
 INCLUDE "maps/GoldenrodArchives.asm"
 INCLUDE "maps/GoldenrodArchives1BF.asm"
 INCLUDE "maps/GoldenrodArchives2BF.asm"
+INCLUDE "maps/Route32BonusCave.asm"
 
 ENDSECTION

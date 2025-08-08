@@ -286,7 +286,8 @@
 	const EVENT_GHOST_VERONICA
 	const EVENT_BEAT_KIMONO_GIRL_KIKYO
 	const EVENT_GHOST_KIKYO
-; Unused: next 321 events
+	const EVENT_BIKESHOP_CLOSED
+; Unused: next 320 events
 
 	const_next 600
 ; Kurt Apricorn events
