@@ -281,6 +281,22 @@ TilesetAerodactylWordRoomAnim:
 	dw NULL,  WaitTileAnimation
 	dw NULL,  DoneTileAnimation
 
+TilesetSeviiAnim:
+	dw vTiles2 tile $14, AnimateWaterTile
+	dw vTiles2 tile $53, ReadTileToAnimBuffer
+	dw wTileAnimBuffer, ScrollTileDown
+	dw wTileAnimBuffer, ScrollTileDown
+	dw vTiles2 tile $53, WriteTileFromAnimBuffer
+	dw NULL,  AnimateWaterPalette
+	dw NULL,  WaitTileAnimation
+	dw NULL,  AnimateFlowerTile
+	dw vTiles2 tile $53, ReadTileToAnimBuffer
+	dw wTileAnimBuffer, ScrollTileDown
+	dw wTileAnimBuffer, ScrollTileDown
+	dw vTiles2 tile $53, WriteTileFromAnimBuffer
+	dw NULL,  StandingTileFrame8
+	dw NULL,  DoneTileAnimation
+
 DoneTileAnimation:
 ; Reset the animation command loop.
 	xor a
