@@ -1,11 +1,11 @@
 	object_const_def
 
-MtEmberExterior_MapScripts:
+MtEmberOutside_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
 
-MtEmberExterior_MapEvents:
+MtEmberOutside_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events

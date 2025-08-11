@@ -30,6 +30,7 @@ OutdoorSprites:
 	dw NewBarkGroupSprites
 	dw SaffronGroupSprites
 	dw CherrygroveGroupSprites
+	dw OneIslandGroupSprites
 	assert_table_length NUM_MAP_GROUPS
 
 PalletGroupSprites:
@@ -632,6 +633,7 @@ DungeonsGroupSprites:
 	db SPRITE_POKE_BALL
 	db SPRITE_BOULDER
 
+OneIslandGroupSprites:
 FastShipGroupSprites:
 	db SPRITE_SUICUNE
 	db SPRITE_SILVER_TROPHY

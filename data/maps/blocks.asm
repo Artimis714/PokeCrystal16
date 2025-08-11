@@ -247,6 +247,17 @@ Route5_Blocks:
 Route9_Blocks:
 	INCBIN "maps/Route9.blk"
 
+OneIsland_Blocks:
+	INCBIN "maps/Sevii/OneIsland.blk"
+
+KindleRoad_Blocks:
+	INCBIN "maps/Sevii/kindleroad.blk"
+
+MtEmberOutside_Blocks:
+	INCBIN "maps/Sevii/MtEmberOutside.blk"
+
+TreasureBeach_Blocks:
+	INCBIN "maps/Sevii/TreasureBeach.blk"
 
 SECTION "Map Blocks 2", ROMX
 

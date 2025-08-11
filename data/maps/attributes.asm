@@ -369,6 +369,20 @@ ENDM
 	connection north, Route10North, ROUTE_10_NORTH, 0
 	connection south, LavenderTown, LAVENDER_TOWN, 0
 
+	map_attributes OneIsland, ONE_ISLAND, $02, SOUTH | EAST 
+	connection south, TreasureBeach, TREASURE_BEACH, 1
+	connection east, KindleRoad, KINDLE_ROAD, -34
+
+	map_attributes TreasureBeach, TREASURE_BEACH, $02, NORTH
+	connection north, OneIsland, ONE_ISLAND, -1
+
+	map_attributes KindleRoad, KINDLE_ROAD, $02, NORTH | WEST
+	connection north, MtEmberOutside, MT_EMBER_OUTSIDE, -10
+	connection west, OneIsland, ONE_ISLAND, 34
+
+	map_attributes MtEmberOutside, MT_EMBER_OUTSIDE, $08, SOUTH
+	connection south, KindleRoad, KINDLE_ROAD, 10
+
 	map_attributes Route23, ROUTE_23, $0f, 0
 	map_attributes SproutTower1F, SPROUT_TOWER_1F, $00, 0
 	map_attributes SproutTower2F, SPROUT_TOWER_2F, $00, 0

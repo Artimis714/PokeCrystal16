@@ -489,4 +489,12 @@ INCLUDE "maps/GoldenrodArchives1BF.asm"
 INCLUDE "maps/GoldenrodArchives2BF.asm"
 INCLUDE "maps/Route32BonusCave.asm"
 
+
+SECTION "Map Scripts 26", ROMX
+
+INCLUDE "maps/Sevii/TreasureBeach.asm"
+INCLUDE "maps/Sevii/MtEmberOutside.asm"
+INCLUDE "maps/Sevii/KindleRoad.asm"
+INCLUDE "maps/Sevii/OneIsland.asm"
+
 ENDSECTION

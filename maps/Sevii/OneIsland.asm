@@ -4,11 +4,6 @@ OneIsland_MapScripts:
 	def_scene_scripts
 
 	def_callbacks
-	callback MAPCALLBACK_NEWMAP, OneIslandFlypointCallback
-
-OneIslandFlypointCallback:
-	setflag ENGINE_FLYPOINT_ONE_ISLAND
-	endcallback
 
 OneIslandSign1:
 	jumptext OneIslandSign1Text
@@ -42,12 +37,11 @@ OneIsland_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event 14, 19, DEBUG_ROOM, 1 ; port
-	warp_event 15, 19, DEBUG_ROOM, 1 ; port
-	
-	warp_event 17,  7, DEBUG_ROOM, 1 ; pokecenter
-	warp_event 11, 13, DEBUG_ROOM, 1 ; left house
-	warp_event 21, 11, DEBUG_ROOM, 1 ; right house
+	warp_event 14, 19, PLAYERS_HOUSE_2F, 1 ; port
+	warp_event 15, 19, PLAYERS_HOUSE_2F, 1 ; port
+	warp_event 17,  7, PLAYERS_HOUSE_2F, 1 ; pokecenter
+	warp_event 11, 13, PLAYERS_HOUSE_2F, 1 ; left house
+	warp_event 21, 11, PLAYERS_HOUSE_2F, 1 ; right house
 
 	def_coord_events
 

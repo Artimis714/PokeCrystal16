@@ -116,7 +116,7 @@ PlayersHouse2F_MapEvents:
 	db 0, 0 ; filler
 
 	def_warp_events
-	warp_event  7,  0, ROUTE_32_BONUS, 1
+	warp_event  7,  0, ONE_ISLAND, 1
 
 	def_coord_events
 

@@ -26,6 +26,7 @@ MapGroupNum_Names::
 	dw New_Bark_Map_Names
 	dw Saffron_Map_Names
 	dw Cherrygrove_Map_Names
+	dw OneIsland_Map_Names
 	assert_table_length NUM_MAP_GROUPS
 
 GetMapGroupNum_Name::
@@ -557,6 +558,15 @@ Cherrygrove_Map_Names:
 	dw Cherrygrove_Map_Name10 ; map_const MR_POKEMONS_HOUSE ; 10
 	dw Cherrygrove_Map_Name11 ; map_const ROUTE_31_VIOLET_GATE ; 11
 	assert_table_length NUM_CHERRYGROVE_MAPS
+
+	; ONEISLAND, 27
+OneIsland_Map_Names:
+	table_width 2, OneIsland_Map_Names
+	dw OneIsland_Map_Name1 ; map_const ONE_ISLAND			;  1
+	dw OneIsland_Map_Name2 ; map_const KINDLE_ROAD			;  2
+	dw OneIsland_Map_Name3 ; map_const MT_EMBER_OUTSIDE		;  3
+	dw OneIsland_Map_Name4 ; map_const TREASURE_BEACH		;  4
+	assert_table_length NUM_ONEISLAND_MAPS
 
 ; MAX LENGTH: 17
 Olivine_Map_Name1: ; map_const OLIVINE_POKECENTER_1F ;  1
@@ -1367,3 +1377,12 @@ Cherrygrove_Map_Name10: ; map_const MR_POKEMONS_HOUSE ; 10
 	db "MR. #MON HOUSE@"
 Cherrygrove_Map_Name11: ; map_const ROUTE_31_VIOLET_GATE ; 11
 	db "ROUTE 31 GATE@"
+
+OneIsland_Map_Name1: ; map_const ONE_ISLAND ;  1
+	db "ONE ISLAND@"
+OneIsland_Map_Name2: ; map_const KINDLE_ROAD ;  2
+	db "KINDLE ROAD@"
+OneIsland_Map_Name3: ; map_const MT_EMBER_OUTSIDE ;  3
+	db "MT EMBER@"
+OneIsland_Map_Name4: ; map_const TREASURE_BEACH ;  4
+	db "TREASURE BEACH@"

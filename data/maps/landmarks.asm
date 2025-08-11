@@ -105,6 +105,9 @@ Landmarks:
 	landmark  12, 100, TohjoFallsName
 	landmark  20,  68, Route28Name
 	landmark 140, 116, FastShipName
+	landmark 100, 100, OneIslandName
+	landmark 101, 101, KindleRoadName
+	landmark 102, 102, MtEmberName
 	assert_table_length NUM_LANDMARKS
 
 NewBarkTownName:     db "NEW BARK<BSP>TOWN@"
@@ -209,4 +212,7 @@ DiglettsCaveName:    db "DIGLETT'S<BSP>CAVE@"
 TohjoFallsName:      db "TOHJO FALLS@"
 UndergroundName:     db "UNDERGROUND@"
 BattleTowerName:     db "BATTLE<BSP>TOWER@"
+OneIslandName:       db "ONE ISLAND@"
+KindleRoadName:      db "KINDLE ROAD@"
+MtEmberName:         db "MT EMBER@"
 SpecialMapName:      db "SPECIAL@"
