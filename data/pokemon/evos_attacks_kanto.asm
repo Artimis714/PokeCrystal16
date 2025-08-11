@@ -1309,8 +1309,9 @@ SeelEvosAttacks:
 DewgongEvosAttacks:
 	db 0 ; no more evolutions
 	dbw 1, HEADBUTT
-	dbw 1, GROWL
+	dbw 1, WATERFALL
 	dbw 1, AURORA_BEAM
+	dbw 1, SURF
 	dbw 5, GROWL
 	dbw 16, AURORA_BEAM
 	dbw 21, REST
