@@ -52,11 +52,13 @@ PlayersHousePosterScript:
 
 
 DemoMon:
+	opentext
 	givepoke DEWGONG, 5, BERRY
 	setevent EVENT_DEBUG_SURFER
 	setflag ENGINE_FOGBADGE
 	setflag ENGINE_RISINGBADGE
 	disappear PLAYERSHOUSE2F_DEMO
+	closetext
 	end
 
 PlayersHouseRadioScript:
